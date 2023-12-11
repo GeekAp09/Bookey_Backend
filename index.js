@@ -34,6 +34,10 @@ const bookmarkSchema = new mongoose.Schema({
 const Bookmark = mongoose.model("linkData", bookmarkSchema, "linkData");
 
 // Define a route to get all bookmarks
+app.get('/', (req, res) => {
+  res.send('Hello, Express is working!');
+});
+
 app.get("/api/bookmarks", async (req, res) => {
   try {
     const allBookmarks = await Bookmark.find();
